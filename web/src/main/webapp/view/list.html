@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h2>Employees</h2>
+	<button id="create" type="submit" class="btn btn-primary pull-right" data-ng-click="create()">New</button>
+	<br/><br/>
+	<table id="employees" class="table table-striped">
+		<thead>
+			<tr>
+	  			<th></th>
+	  			<th>Name</th>
+	  			<th>Birthday</th>
+	  			<th>Salary</th>
+	  			<th>Function</th>
+  			</tr>
+  		</thead>
+  		<tbody>
+	  		<tr data-ng-repeat="employee in employees">
+	  			<td data-ng-click="edit(employee)"><a href="#"><i class="icon-edit orange"></i></a></td>
+	  			<td>{{employee.name}}</td>
+	  			<td>{{employee.birthday | date}}</td>
+	  			<td>{{employee.salary | currency}}</td>
+	  			<td>{{employee.function}}</td>
+	  		</tr>
+  		</tbody>
+	</table>
+</body>
+</html>

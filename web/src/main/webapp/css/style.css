@@ -1,0 +1,15 @@
+body {
+	padding-top: 70px;
+}
+
+.hidden {
+	display: none;
+}
+
+select {
+	color: #999999;
+}
+
+select option {
+	color: black;
+}

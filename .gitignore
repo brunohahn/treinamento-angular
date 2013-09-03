@@ -1,6 +1,11 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+.settings/
+target/
+target-eclipse/
+build/
+bin/
+temp/
+opt/
+*.classpath
+*.project
+*.log
+*~

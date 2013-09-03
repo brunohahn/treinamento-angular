@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h2>Employee</h2>
+	<form class="form-horizontal">
+		<div class="control-group">
+			<input type="text" data-ng-model="employee.name" placeholder="Name">
+		</div>
+		<div class="control-group">
+			<input type="date" data-ng-model="employee.birthday" placeholder="Birthday">
+		</div>
+		<div class="control-group">
+			<input type="text" data-ng-model="employee.salary" placeholder="Salary">
+		</div>
+		<div class="control-group">
+			<select data-ng-model="employee.function" data-ng-options="f for f in functions">
+				<option value="" disabled selected class="hidden">Function</option>
+			</select>
+		</div>
+		<div class="control-group pull-right">
+			<button id="cancel" type="button" class="btn" data-ng-click="cancel()">Cancel</button>
+			<button id="remove" type="submit" class="btn btn-danger" data-ng-click="remove()">Delete</button>
+			<button id="save"   type="submit" class="btn btn-success" data-ng-click="save()">Save</button>
+		</div>
+	</form>
+</body>
+</html>
