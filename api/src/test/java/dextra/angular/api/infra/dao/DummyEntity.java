@@ -1,4 +1,4 @@
-package dextra.angular.lib.dao;
+package dextra.angular.api.infra.dao;
 
 import java.io.Serializable;
 

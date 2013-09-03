@@ -1,13 +1,10 @@
-package dextra.angular.lib.util;
+package dextra.angular.api.infra.util;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import dextra.angular.api.infra.util.ValidationUtils;
 
 public class ValidationUtilsUT {
 

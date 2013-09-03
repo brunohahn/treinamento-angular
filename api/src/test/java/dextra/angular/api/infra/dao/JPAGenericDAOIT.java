@@ -1,7 +1,6 @@
-package dextra.angular.lib.dao;
+package dextra.angular.api.infra.dao;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -17,8 +16,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import dextra.angular.api.infra.dao.JPAGenericDAO;
 
 public class JPAGenericDAOIT {
 
