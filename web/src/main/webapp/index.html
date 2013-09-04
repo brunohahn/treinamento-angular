@@ -39,37 +39,37 @@
 			  			</tr>
 			  		</thead>
 			  		<tbody>
-				  		<tr data-ng-repeat="employee in employees">
-				  			<td data-ng-click="edit(employee)"><a href="#"><i class="icon-edit orange"></i></a></td>
-				  			<td>{{employee.name}}</td>
-				  			<td>{{employee.birthday | date}}</td>
-				  			<td>{{employee.salary | currency}}</td>
-				  			<td>{{employee.function}}</td>
+				  		<tr>
+				  			<td><a href="#"><i class="icon-edit"></i></a></td>
+				  			<td>--Name--</td>
+				  			<td>--Birthday--</td>
+				  			<td>--Salary--</td>
+				  			<td>--Function--</td>
 				  		</tr>
 			  		</tbody>
 				</table>
 			</div>
-			<div class="span3 well" data-ng-hide="!openned">
+			<div class="span3 well">
 				<h2>Employee</h2>
 				<form class="form-horizontal">
 					<div class="control-group">
-						<input type="text" data-ng-model="employee.name" placeholder="Name">
+						<input type="text" placeholder="Name">
 					</div>
 					<div class="control-group">
-						<input type="text" data-ng-model="formatedBirthday" placeholder="Birthday" />
+						<input type="text" placeholder="Birthday" />
 					</div>
 					<div class="control-group">
-						<input type="text" data-ng-model="employee.salary" placeholder="Salary">
+						<input type="text" placeholder="Salary">
 					</div>
 					<div class="control-group">
-						<select data-ng-model="employee.function" data-ng-options="f for f in functions">
+						<select>
 							<option value="" disabled selected class="hidden">Function</option>
 						</select>
 					</div>
 					<div class="control-group pull-right">
-						<button id="cancel" type="button" class="btn" data-ng-click="cancel()">Cancel</button>
-						<button id="remove" type="submit" class="btn btn-danger" data-ng-click="remove()">Delete</button>
-						<button id="save"   type="submit" class="btn btn-success" data-ng-click="save()">Save</button>
+						<button id="cancel" type="button" class="btn">Cancel</button>
+						<button id="remove" type="submit" class="btn btn-danger">Delete</button>
+						<button id="save"   type="submit" class="btn btn-success">Save</button>
 					</div>
 				</form>
 			</div>
