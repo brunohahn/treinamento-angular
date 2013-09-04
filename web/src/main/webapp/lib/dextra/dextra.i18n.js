@@ -1,4 +1,4 @@
-angular.module('jequiti.i18n', []).factory("dxI18n", function(dxBundle) {
+angular.module('dextra.i18n', []).factory("dxI18n", function(dxBundle) {
 	return function(key) {
 		var prefixs = key.split('.');
 		var object = dxBundle;

@@ -1,4 +1,4 @@
-angular.module('jequiti.http', [ 'ng' ]).config(function($httpProvider, $provide) {
+angular.module('dextra.http', [ 'ng' ]).config(function($httpProvider, $provide) {
 
 	$provide.value("dxLoadingHideHandler", function(response) {
 	});

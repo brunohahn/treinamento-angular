@@ -1,4 +1,4 @@
-var appModule = angular.module('app', [ 'ngCookies', 'ui.bootstrap', 'jequiti.input', 'jequiti.http', 'jequiti.i18n' ]);
+var appModule = angular.module('app', [ 'ngCookies', 'ui.bootstrap', 'dextra.input', 'dextra.http', 'dextra.i18n' ]);
 
 appModule.service('employeeService', function($http, $q, appConfig) {
 	return new EmployeeService($http, $q, appConfig);

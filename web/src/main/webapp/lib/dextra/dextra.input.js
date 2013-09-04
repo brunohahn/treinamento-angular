@@ -1,4 +1,4 @@
-angular.module('jequiti.input', []).directive('dxNumeric', function() {
+angular.module('dextra.input', []).directive('dxNumeric', function() {
 	return {
 		restrict : 'A',
 		require : 'ngModel',
