@@ -22,6 +22,23 @@ Utils.isNotUndefinedOrEmpty = function(array) {
 	return !Utils.isUndefinedOrEmpty(array);
 };
 
+Utils.parseDate = function(value) {
+	var result = null;
+	if (value) {
+		var dateParts = value.split("/");
+		result = new Date(dateParts[2], (parseFloat(dateParts[1]) - 1), dateParts[0]);
+	}
+	return result;
+};
+
+Utils.formatDate = function(value) {
+	var result = null;
+	if (value) {
+		result = value.getDate() + "/" + (value.getMonth() + 1) + "/" + value.getFullYear();
+	}
+	return result;
+};
+
 Utils.removeItemById = function(item, array) {
 	angular.forEach(array, function(object, index) {
 		if (object.id === item.id) {
