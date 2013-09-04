@@ -1,4 +1,4 @@
-function IndexController($scope, $rootScope, $window, appConfig, employeeService, functionService) {
+function IndexController($scope, $rootScope, $window, $timeout, appConfig, employeeService, functionService) {
 
 	$scope.openned = false;
 
@@ -56,6 +56,12 @@ function IndexController($scope, $rootScope, $window, appConfig, employeeService
 	$scope.closeForm = function() {
 		$scope.employee = {};
 		$scope.openned = false;
+	}
+
+	$scope.openDatePicker = function() {
+		$timeout(function() {
+			$scope.datePicker = true;
+		});
 	}
 
 }

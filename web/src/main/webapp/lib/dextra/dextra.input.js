@@ -25,7 +25,6 @@ angular.module('dextra.input', []).directive('dxNumeric', function() {
 				}
 
 			});
-
 		}
 	}
 }).directive('dxDatepicker', function() {
