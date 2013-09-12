@@ -25,17 +25,21 @@ function IndexController($scope, $rootScope, $window, $timeout, appConfig, emplo
 		$scope.closeForm();
 	}
 
-	$scope.save = function() {
-		if ($scope.employee.id) {
-			employeeService.update($scope.employee).then(function() {
-				Utils.replaceItemById($scope.employee, $scope.employees);
-				$scope.closeForm();
-			});
+	$scope.save = function(employeeForm) {
+		if (employeeForm.$valid) {
+			if ($scope.employee.id) {
+				employeeService.update($scope.employee).then(function() {
+					Utils.replaceItemById($scope.employee, $scope.employees);
+					$scope.closeForm();
+				});
+			} else {
+				employeeService.create($scope.employee).then(function(result) {
+					Utils.addItem(result, $scope.employees);
+					$scope.closeForm();
+				});
+			}
 		} else {
-			employeeService.create($scope.employee).then(function(result) {
-				Utils.addItem(result, $scope.employees);
-				$scope.closeForm();
-			});
+			alert('error');
 		}
 	}
 

@@ -2,10 +2,6 @@ body {
 	padding-top: 70px;
 }
 
-.hidden {
-	display: none;
-}
-
 select {
 	color: #999999;
 }
@@ -13,3 +9,8 @@ select {
 select option {
 	color: black;
 }
+
+.hidden {
+	display: none;
+}
+
