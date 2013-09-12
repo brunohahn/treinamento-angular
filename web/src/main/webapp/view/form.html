@@ -6,17 +6,21 @@
 	<h2>Employee</h2>
 	<form name="employeeForm" class="css-form form-horizontal" novalidate>
 		<div class="control-group">
-			<input type="text" name="a" data-ng-model="employee.name" placeholder="Name" required />
+			<em>*</em>
+			<input type="text" data-ng-model="employee.name" placeholder="Name" required />
 		</div>
 		<div class="control-group">
-			<input type="text" name="b" data-datepicker-popup="dd/MM/yyyy" data-show-weeks="false" data-ng-model="employee.birthday"
+			<em>*</em>
+			<input type="text" data-datepicker-popup="dd/MM/yyyy" data-show-weeks="false" data-ng-model="employee.birthday"
 				placeholder="Birthday" required />
 		</div>
 		<div class="control-group">
-			<input type="text" name="c" data-ng-model="employee.salary" placeholder="Salary" required />
+			<em>*</em>
+			<input type="text" data-ng-model="employee.salary" placeholder="Salary" required ng-pattern="^\-?\d*$"/>
 		</div>
 		<div class="control-group">
-			<select data-ng-model="employee.function" data-ng-options="f for f in functions" >
+			<em>*</em>
+			<select data-ng-model="employee.function" data-ng-options="f for f in functions" required>
 				<option value="" disabled selected class="hidden">Function</option>
 			</select>
 		</div>
