@@ -32,7 +32,7 @@ describe('Employee Crud Test', function() {
 	it('create a employee', function() {
 		employee = {
 			name : 'a',
-			birthday : 123433,
+			birthday : new Date(),
 			salary : 3333,
 			function : 'MANAGER'
 		};
