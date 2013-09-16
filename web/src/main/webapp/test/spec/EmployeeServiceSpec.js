@@ -1,4 +1,4 @@
-describe('Employee Crud Test', function() {
+describe('Employee Service Test', function() {
 
 	var page = new IndexPage();
 	var employee = {

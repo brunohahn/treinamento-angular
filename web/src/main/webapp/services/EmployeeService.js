@@ -1,6 +1,6 @@
 function EmployeeService($http, $q, appConfig) {
 
-	this.list = function(id) {
+	this.list = function() {
 		var deferred = $q.defer();
 		$http.get(appConfig.baseApiUrl + '/employees').success(function(data) {
 			deferred.resolve(data);
