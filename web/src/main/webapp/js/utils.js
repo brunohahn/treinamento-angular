@@ -34,6 +34,9 @@ Utils.parseDate = function(value) {
 Utils.formatDate = function(value) {
 	var result = null;
 	if (value) {
+		if (angular.isNumber(value)) {
+			value = new Date(value);
+		}
 		result = value.getDate() + "/" + (value.getMonth() + 1) + "/" + value.getFullYear();
 	}
 	return result;

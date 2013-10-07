@@ -1,29 +1,19 @@
-function Controller($scope, $rootScope, $window, $filter) {
+function Controller($scope, $rootScope, $window, $filter, $http, $log) {
 
 	$scope.openned = false;
-
-	$scope.employees = [ {
-		"id" : 1,
-		"name" : "Fulano",
-		"birthday" : new Date(),
-		"salary" : 1000.0,
-		"function" : "DEVELOPER"
-	}, {
-		"id" : 2,
-		"name" : "Beltrano",
-		"birthday" : new Date(),
-		"salary" : 5000.0,
-		"function" : "PO"
-	}, {
-		"id" : 3,
-		"name" : "Ciclano",
-		"birthday" : new Date(),
-		"salary" : 10000.0,
-		"function" : "MANAGER"
-	} ];
-
-	$scope.functions = [ "MANAGER", "PO", "DEVELOPER" ];
-
+	
+	$scope.init = function() {
+		
+		$http.get('/dextra-angular/api/employees').success(function(data) {
+			$scope.employees = data;
+		}).error($scope.error);
+		
+		$http.get('/dextra-angular/api/functions').success(function(data) {
+			$scope.functions = data;
+		}).error($scope.error);
+		
+	}
+	
 	$scope.edit = function(employee) {
 		$scope.openForm(angular.copy(employee));
 	}
@@ -41,26 +31,32 @@ function Controller($scope, $rootScope, $window, $filter) {
 		$scope.employee.birthday = Utils.parseDate($scope.formatedBirthday);
 
 		if ($scope.employee.id) {
-			Utils.replaceItemById($scope.employee, $scope.employees);
+			$http.put('/dextra-angular/api/employees/' + $scope.employee.id, $scope.employee).success(function() {
+				Utils.replaceItemById($scope.employee, $scope.employees);
+				$scope.closeForm();
+			}).error($scope.error);
 		} else {
-			Utils.addItem(result, $scope.employees);
+			$http.post('/dextra-angular/api/employees', $scope.employee).success(function(data) {
+				Utils.addItem(data, $scope.employees);
+				$scope.closeForm();
+			}).error($scope.error);
 		}
-
-		$scope.closeForm();
 
 	}
 
 	$scope.remove = function() {
 		if ($scope.employee && $scope.employee.id) {
-			Utils.removeItemById($scope.employee, $scope.employees);
+			$http.delete('/dextra-angular/api/employees/' + $scope.employee.id).success(function() {
+				Utils.removeItemById($scope.employee, $scope.employees);
+				$scope.closeForm();
+			}).error($scope.error);
+		}else{
+			$scope.closeForm();
 		}
-		$scope.closeForm();
 	}
 
 	$scope.openForm = function(employee) {
 		$scope.employee = employee;
-		// $scope.formatedBirthday = $filter('date')($scope.employee.birthday,
-		// 'dd/MM/yyyy');
 		$scope.formatedBirthday = Utils.formatDate($scope.employee.birthday);
 		$scope.openned = true;
 	}
@@ -68,6 +64,10 @@ function Controller($scope, $rootScope, $window, $filter) {
 	$scope.closeForm = function() {
 		$scope.employee = {};
 		$scope.openned = false;
+	}
+
+	$scope.error = function(data, status, func, request) {
+		$log.error('Http Error ' + status + " : " + data);
 	}
 
 }
