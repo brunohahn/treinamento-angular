@@ -26,7 +26,7 @@ function IndexPage() {
 
 	this.fillForm = function(employee) {
 		input('employee.name').enter(employee.name);
-		input('employee.birthday').enter(employee.birthday);
+		input('formatedBirthday').enter(employee.birthday);
 		input('employee.salary').enter(employee.salary);
 		select('employee.function').option(employee.function);
 	}

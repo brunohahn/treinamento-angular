@@ -17,15 +17,15 @@ function EmployeeService($http, $log) {
 	};
 
 	this.update = function(employee, callback) {
-		$http.put('/dextra-angular/api/employees/' + employee.id, employee).success(callback).error($scope.error);
+		$http.put('/dextra-angular/api/employees/' + employee.id, employee).success(callback).error(error);
 	};
 
 	this.create = function(employee, callback) {
-		$http.post('/dextra-angular/api/employees', employee).success(callback).error($scope.error);
+		$http.post('/dextra-angular/api/employees', employee).success(callback).error(error);
 	};
 
 	this.remove = function(employee, callback) {
-		$http.delete('/dextra-angular/api/employees/' + employee.id).success(callback).error($scope.error);
+		$http.delete('/dextra-angular/api/employees/' + employee.id).success(callback).error(error);
 	};
 
 };
