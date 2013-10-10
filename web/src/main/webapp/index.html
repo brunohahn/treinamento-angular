@@ -12,7 +12,6 @@
 	<link rel="icon" type="image/png" href="img/favicon.ico">
 	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	
 	<script type="text/javascript" charset="utf-8" src="js/lib/jquery-1.10.2.min.js"></script>
@@ -28,7 +27,7 @@
 <body data-ng-controller="Controller" data-ng-init="init()">
 	<div class="container">
 		<div class="row">
-			<div class="span8 well">
+			<div class="col-md-7 well">
 				<h2>Employees</h2>
 				<button id="create" type="submit" class="btn btn-primary pull-right" data-ng-click="create()" tooltip="Create a New Employee">New</button>
 				<br/><br/>
@@ -53,20 +52,20 @@
 			  		</tbody>
 				</table>
 			</div>
-			<div class="span3 well" data-ng-hide="!openned">
+			<div class="col-md-offset-1 col-md-3 well" data-ng-hide="!openned">
 				<h2>Employee</h2>
-				<form class="form-horizontal">
-					<div class="control-group">
-						<input type="text" data-ng-model="employee.name" placeholder="Name">
+				<form>
+					<div class="form-group">
+						<input type="text" class="form-control" data-ng-model="employee.name" placeholder="Name">
 					</div>
-					<div class="control-group">
-						<input type="text" data-ng-model="formatedBirthday" placeholder="Birthday" />
+					<div class="form-group">
+						<input type="text" class="form-control" data-ng-model="formatedBirthday" placeholder="Birthday" />
 					</div>
-					<div class="control-group">
-						<input type="text" data-ng-model="employee.salary" placeholder="Salary">
+					<div class="form-group">
+						<input type="text" class="form-control" data-ng-model="employee.salary" placeholder="Salary">
 					</div>
-					<div class="control-group">
-						<select data-ng-model="employee.function" data-ng-options="f for f in functions">
+					<div class="form-group">
+						<select class="form-control" data-ng-model="employee.function" data-ng-options="f for f in functions">
 							<option value="" disabled selected class="hidden">Function</option>
 						</select>
 					</div>
