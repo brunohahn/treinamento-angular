@@ -1,16 +1,16 @@
-function Controller($scope, $rootScope, $window, $filter, $http, $log) {
+function Controller($scope, $rootScope, $window, $filter, $http, employeeService) {
 
 	$scope.openned = false;
 	
 	$scope.init = function() {
 		
-		$http.get('/dextra-angular/api/employees').success(function(data) {
+		employeeService.list(function(data) {
 			$scope.employees = data;
-		}).error($scope.error);
+		});
 		
-		$http.get('/dextra-angular/api/functions').success(function(data) {
+		employeeService.listFunctions(function(data) {
 			$scope.functions = data;
-		}).error($scope.error);
+		});
 		
 	}
 	
@@ -31,25 +31,25 @@ function Controller($scope, $rootScope, $window, $filter, $http, $log) {
 		$scope.employee.birthday = Utils.parseDate($scope.formatedBirthday);
 
 		if ($scope.employee.id) {
-			$http.put('/dextra-angular/api/employees/' + $scope.employee.id, $scope.employee).success(function() {
+			employeeService.update($scope.employee, function() {
 				Utils.replaceItemById($scope.employee, $scope.employees);
 				$scope.closeForm();
-			}).error($scope.error);
+			});
 		} else {
-			$http.post('/dextra-angular/api/employees', $scope.employee).success(function(data) {
+			employeeService.create($scope.employee, function(data) {
 				Utils.addItem(data, $scope.employees);
 				$scope.closeForm();
-			}).error($scope.error);
+			});
 		}
 
 	}
 
 	$scope.remove = function() {
 		if ($scope.employee && $scope.employee.id) {
-			$http.delete('/dextra-angular/api/employees/' + $scope.employee.id).success(function() {
+			employeeService.remove($scope.employee,function() {
 				Utils.removeItemById($scope.employee, $scope.employees);
 				$scope.closeForm();
-			}).error($scope.error);
+			});
 		}else{
 			$scope.closeForm();
 		}

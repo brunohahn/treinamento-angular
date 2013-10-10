@@ -20,13 +20,13 @@
 	<script type="text/javascript" charset="utf-8" src="js/lib/angular.min.js"></script>
 	
 	<script type="text/javascript" charset="utf-8" src="js/utils.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/EmployeeService.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/controller.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
 
 </head>
 <body data-ng-controller="Controller" data-ng-init="init()">
 	<div class="container">
-		<alert>teste</alert>
 		<div class="row">
 			<div class="span8 well">
 				<h2>Employees</h2>
@@ -45,7 +45,7 @@
 			  		<tbody>
 				  		<tr data-ng-repeat="employee in employees">
 				  			<td data-ng-click="edit(employee)"><icon type="edit"/></td>
-				  			<td>{{employee.name | abbreviate:5}}</td>
+				  			<td>{{employee.name}}</td>
 				  			<td>{{employee.birthday | date}}</td>
 				  			<td>{{employee.salary | currency}}</td>
 				  			<td>{{employee.function}}</td>

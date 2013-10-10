@@ -1,5 +1,9 @@
 var appModule = angular.module('app', []);
 
+appModule.service("employeeService", function($http, $log){
+	return new EmployeeService($http, $log);
+})
+
 appModule.filter("reverse", function() {
 	return function(input) {
 		return input.split("").reverse().join("");
