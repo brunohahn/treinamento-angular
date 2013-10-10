@@ -2,7 +2,7 @@ var appModule = angular.module('app', []);
 
 appModule.filter("reverse", function() {
 	return function(input) {
-		return input;
+		return input.split("").reverse().join("");
 	};
 });
 appModule.directive("tooltip", function() {
@@ -27,12 +27,23 @@ appModule.directive("alert", function() {
 });
 
 appModule.filter("abbreviate", function() {
-	return function(input) {
-		return input;
+	return function(input, max) {
+		var sufix = '';
+		max = max ? max : 15;
+		if (input.length > max) {
+			sufix = '...';
+		}
+		return input.substring(0, max) + sufix;
 	};
 });
 appModule.directive("icon", function() {
 	return {
 		restrict : 'E',
+		replace : true,
+		transclude : true,
+		template : '<a href="#"><i class="icon-{{type}}"></i></a>',
+		scope : {
+			type : '@'
+		}
 	}
 });

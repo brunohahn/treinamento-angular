@@ -44,8 +44,8 @@
 			  		</thead>
 			  		<tbody>
 				  		<tr data-ng-repeat="employee in employees">
-				  			<td data-ng-click="edit(employee)"><a href="#"><i class="icon-edit"></i></a></td>
-				  			<td>{{employee.name}}</td>
+				  			<td data-ng-click="edit(employee)"><icon type="edit"/></td>
+				  			<td>{{employee.name | abbreviate:5}}</td>
 				  			<td>{{employee.birthday | date}}</td>
 				  			<td>{{employee.salary | currency}}</td>
 				  			<td>{{employee.function}}</td>
