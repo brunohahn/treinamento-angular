@@ -2,7 +2,16 @@ var appModule = angular.module('app', []);
 
 appModule.filter("reverse", function() {
 	return function(input) {
-		return input;
+		return function(input, uppercase) {
+	      var out = "";
+	      for (var i = 0; i < input.length; i++) {
+	        out = input.charAt(i) + out;
+	      }
+	      if (uppercase) {
+	        out = out.toUpperCase();
+	      }
+	      return out;
+	    }
 	};
 });
 appModule.directive("tooltip", function() {
