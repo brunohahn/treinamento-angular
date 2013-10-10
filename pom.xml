@@ -20,6 +20,14 @@
 		<module>web</module>
 	</modules>
 
+	<distributionManagement>
+		<site>
+			<id>jeztz-site-repo</id>
+			<url>s3://jetzt-site-repo/site</url>
+		</site>
+	</distributionManagement>
+
+
 	<dependencies>
 
 		<dependency>
@@ -74,6 +82,15 @@
 	</dependencies>
 
 	<build>
+
+		<extensions>
+			<extension>
+				<groupId>org.cyclopsgroup</groupId>
+				<artifactId>awss3-maven-wagon</artifactId>
+				<version>0.1</version>
+			</extension>
+		</extensions>
+
 		<plugins>
 
 			<plugin>
