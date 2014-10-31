@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>dextra.angular</groupId>
+	<groupId>andreluiznsilva.angular</groupId>
 	<artifactId>main</artifactId>
 	<version>1.0</version>
 	<packaging>pom</packaging>
@@ -219,7 +219,7 @@
 				<configuration>
 					<webAppSourceDirectory>${basedir}/api/src/main/webapp</webAppSourceDirectory>
 					<webApp>
-						<contextPath>/dextra-angular</contextPath>
+						<contextPath>/treinamento</contextPath>
 						<extraClasspath>${basedir}/api/target/classes</extraClasspath>
 						<overrideDescriptor>${basedir}/api/src/main/webapp/WEB-INF/web.xml</overrideDescriptor>
 						<baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
