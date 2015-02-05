@@ -16,7 +16,7 @@
 		</div>
 		<div class="control-group">
 			<em>*</em>
-			<input type="text" data-ng-model="employee.salary" placeholder="Salary" required ng-pattern="/^\-?\d*$/"/>
+			<input type="text" data-ng-model="employee.salary" placeholder="Salary" required data-ng-pattern="/^\-?\d*$/"/>
 		</div>
 		<div class="control-group">
 			<em>*</em>
@@ -26,7 +26,7 @@
 		</div>
 		<div class="control-group pull-right">
 			<button id="cancel" type="button" class="btn" data-ng-click="cancel()">Cancel</button>
-			<button id="remove" type="submit" class="btn btn-danger" data-ng-click="remove()">Delete</button>
+			<button id="remove" type="submit" class="btn btn-danger" data-ng-click="remove()" data-ng-disabled="employee.id==null">Delete</button>
 			<button id="save" type="submit" class="btn btn-success" data-ng-click="save(employeeForm)" data-ng-disabled="employeeForm.$invalid">Save</button>
 		</div>
 	</form>
