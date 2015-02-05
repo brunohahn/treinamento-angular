@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
 	<listener>
 		<listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
 	</listener>
+
+	<context-param>
+		<param-name>org.eclipse.jetty.servlet.Default.useFileMappedBuffer</param-name>
+		<param-value>false</param-value>
+	</context-param>
 
 	<resource-env-ref>
 		<resource-env-ref-name>BeanManager</resource-env-ref-name>
@@ -22,7 +28,7 @@
 		<servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
 		<init-param>
 			<param-name>javax.ws.rs.Application</param-name>
-			<param-value>dextra.angular.api.rest.Application</param-value>
+			<param-value>andreluiznsilva.angular.api.rest.Application</param-value>
 		</init-param>
 	</servlet>
 
@@ -46,7 +52,7 @@
 
 	<servlet>
 		<servlet-name>Reset</servlet-name>
-		<servlet-class>dextra.angular.api.test.ResetServlet</servlet-class>
+		<servlet-class>andreluiznsilva.angular.api.test.ResetServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Reset</servlet-name>

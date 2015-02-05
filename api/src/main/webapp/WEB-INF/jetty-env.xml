@@ -7,7 +7,7 @@
 		<Arg>
 			<New class="org.apache.commons.dbcp.BasicDataSource">
 				<Set name="driverClassName">org.hsqldb.jdbcDriver</Set>
-				<Set name="url">jdbc:hsqldb:file:temp/db/angularDS</Set>
+				<Set name="url">jdbc:hsqldb:file:target/db/angularDS</Set>
 				<Set name="username">sa</Set>
 				<Set name="password"></Set>
 			</New>
