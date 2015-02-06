@@ -21,7 +21,7 @@ function Controller($scope, $rootScope, $window, $filter) {
 		"salary" : 10000.0,
 		"function" : "MANAGER"
 	} ];
-
+	
 	$scope.functions = [ "MANAGER", "PO", "DEVELOPER" ];
 
 	$scope.edit = function(employee) {

@@ -219,7 +219,7 @@
 				<configuration>
 					<webAppSourceDirectory>${basedir}/api/src/main/webapp</webAppSourceDirectory>
 					<webApp>
-						<contextPath>/treinamento</contextPath>
+						<contextPath>/</contextPath>
 						<extraClasspath>${basedir}/api/target/classes</extraClasspath>
 						<overrideDescriptor>${basedir}/api/src/main/webapp/WEB-INF/web.xml</overrideDescriptor>
 						<baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
